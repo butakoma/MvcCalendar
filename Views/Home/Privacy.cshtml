@@ -4,3 +4,30 @@
 <h1>@ViewData["Title"]</h1>
 
 <p>Use this page to detail your site's privacy policy.</p>
+
+<div>
+    <button id="open-dialog">OPEN</button>
+    <div id="dialog-area"></div>
+</div>
+@section Scripts{
+<script type="text/javascript">
+$(function(){
+    $('#dialog-area').dialog({
+          autoOpen: false,
+          width: 800,
+          height: 500,
+          modal: true,
+          open: function () {
+              $(this).load('About');
+        },
+        title: 'title'
+    })
+
+    $('#open-dialog').on('click', function(){
+        $('#dialog-area').dialog('open');
+    })
+
+  })
+
+</script>
+}
